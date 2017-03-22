@@ -1,0 +1,12 @@
+body {
+  background-color: #ccc;
+  border: 1px solid #f00;
+  font-size: 30px;
+  outline: 1px solid #f00;
+}
+div {
+  background-color: #008000;
+  color: #fff;
+  width: 600px;
+  height: 100px;
+}
