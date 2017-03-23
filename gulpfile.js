@@ -24,6 +24,7 @@ gulp.task('stylus', function(){ // Создаем таск "sass"
 
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
     browserSync({ // Выполняем browser Sync
+        port: 8080,
         server: { // Определяем параметры сервера
             baseDir: 'app' // Директория для сервера - app
         },
