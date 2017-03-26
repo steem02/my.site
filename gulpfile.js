@@ -12,12 +12,19 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
     sourcemaps = require('gulp-sourcemaps');
     pug = require('gulp-pug');
+    notify = require('gulp-notify');
 
 gulp.task('stylus', function(){ // Создаем таск "sass"
     return gulp.src('app/stylus/**/*.styl') // Берем источник, все файлы styl из папки и дочерних
         .pipe(stylus({
             'include css': true
         })) // Преобразуем Stylus в CSS посредством gulp-stylus
+        .on('error', notify.onError(function(err) {
+            return {
+                title: 'Styles',
+                message: err.message
+            };
+        }))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
         .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
         .pipe(browserSync.reload({stream: true})); // Обновляем CSS на странице при изменении
