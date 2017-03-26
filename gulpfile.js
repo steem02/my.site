@@ -13,12 +13,16 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps');
     pug = require('gulp-pug');
     notify = require('gulp-notify');
+    debug = require('gulp-debug')
 
 gulp.task('stylus', function(){ // Создаем таск "sass"
     return gulp.src('app/stylus/**/*.styl') // Берем источник, все файлы styl из папки и дочерних
+        .pipe(debug({title: 'src'}))
+        .pipe(sourcemaps.init())
         .pipe(stylus({
             'include css': true
         })) // Преобразуем Stylus в CSS посредством gulp-stylus
+        .pipe(debug({title: 'stylus'}))
         .on('error', notify.onError(function(err) {
             return {
                 title: 'Styles',
@@ -26,6 +30,7 @@ gulp.task('stylus', function(){ // Создаем таск "sass"
             };
         }))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
         .pipe(browserSync.reload({stream: true})); // Обновляем CSS на странице при изменении
 })
@@ -60,23 +65,14 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('css-libs', ['stylus'], function() {
-    return gulp.src(['!app/css/*.min.css', 'app/css/*.css']) // Выбираем файл для минификации
+    return gulp.src(['!app/css/*.min.css', 'app/css/*.css'], since: {gulp.lastRun('css-libs')}) // Выбираем файл для минификации
         .pipe(cssnano()) // Сжимаем
         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
         .pipe(gulp.dest('app/css/min_css')); // Выгружаем в папку app/css
 });
 
-gulp.task('sourcemaps-external', function () {
-    return gulp.src('app/css/min_css/*.css')
-        .pipe(sourcemaps.init())
-        .pipe(stylus())
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('app/css/map_css'));
-});
-
-gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() { // включаем brsync,stylus до выполнения watch
-	gulp.watch('app/stylus/**/*.styl', ['stylus']); // наблюдение за stylus файлами
-    gulp.watch('app/css/**/*.css', ['css-libs']);
+gulp.task('watch', ['browser-sync', 'scripts'], function() { // включаем brsync,stylus до выполнения watch
+	gulp.watch('app/stylus/**/*.styl', ['stylus', 'css-libs']); // наблюдение за stylus файлами
     gulp.watch('app/pug/**/*.pug', ['pug']);
     gulp.watch('app/css/min_css/*.css', browserSync.reload);   
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
@@ -98,11 +94,12 @@ gulp.task('img', function() {
         .pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
 });
 
-gulp.task('build', ['stylus', 'scripts'], function() {
+gulp.task('build', ['stylus', 'pug', 'scripts', 'clean'], function() {
 
     var buildCss = gulp.src([ // Переносим CSS стили в продакшен
-        'app/css/style.min.css',
-        'app/css/libs.min.css'
+        'app/css/min_css/style.min.css',
+        'app/css/min_css/libs.min.css',
+        'app/css/*.css.map'
         ])
     .pipe(gulp.dest('dist/css'))
 
@@ -112,7 +109,7 @@ gulp.task('build', ['stylus', 'scripts'], function() {
     var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
     .pipe(gulp.dest('dist/js'))
 
-    var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
+    var buildHtml = gulp.src('app/index.html') // Переносим HTML в продакшен
     .pipe(gulp.dest('dist'));
 
 });

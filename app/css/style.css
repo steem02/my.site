@@ -3,10 +3,12 @@ body {
   font-size: 30px;
 }
 div {
-  background-color: #00f;
+  background-color: #000;
   color: #fff;
   width: 300px;
   height: 200px;
   border: 1px solid #f00;
   font-size: 50px;
 }
+
+/*# sourceMappingURL=style.css.map */
