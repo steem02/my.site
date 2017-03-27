@@ -15,6 +15,7 @@ var gulp = require('gulp')
     pngquant = require('imagemin-pngquant') // Подключаем библиотеку для работы с png
     cache = require('gulp-cache') // Подключаем библиотеку кеширования
     newer = require('gulp-newer') // смотрит за файлом, и пропускает его дальше, только если он изменен
+    
 
 gulp.task('stylus', function(){
   return gulp.src('app/stylus/*.styl', {since: gulp.lastRun('stylus')})
@@ -35,14 +36,6 @@ gulp.task('stylus', function(){
     .pipe(gulp.dest('app/css'))
 });
 
-gulp.task('libcss', function(){
-    return gulp.src('app/libs/magnific-popup/dist/magnific-popup.css', {since: gulp.lastRun('libcss')})
-        .pipe(debug({titile: 'libcss_src'}))
-        .pipe(cssnano())
-        .pipe(rename('libs.min.css'))
-        .pipe(gulp.dest('dist'))
-})
-
 gulp.task('css-min', gulp.series('stylus', function() {
     return gulp.src(['!app/css/*.min.css', 'app/css/*.css'], {since: gulp.lastRun('css-min')}) // Выбираем файл для минификации
         .pipe(debug({title: 'min-src'}))
@@ -50,7 +43,7 @@ gulp.task('css-min', gulp.series('stylus', function() {
         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
         .pipe(newer('dist'))      
         .pipe(debug({title: 'rename'}))
-        .pipe(gulp.dest('dist')); // Выгружаем в папку app/css
+        .pipe(gulp.dest('dist/css')); // Выгружаем в папку app/css
 }));
 
 
@@ -73,7 +66,7 @@ gulp.task('scripts', function() {
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл
         .pipe(debug({title: 'dist'}))
-        .pipe(gulp.dest('dist')); // Выгружаем в папку app/js
+        .pipe(gulp.dest('dist/js')); // Выгружаем в папку app/js
 });
 
 gulp.task('jscript', function() {
@@ -98,24 +91,20 @@ gulp.task('img', function() {
 
 gulp.task('build', function() {
 
-    var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
+    return gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
     .pipe(newer('dist/fonts'))
     .pipe(gulp.dest('dist/fonts'))
 });
 
 gulp.task('clean', function() {
-    return del.sync('dist'); // Удаляем папку dist перед сборкой
+    return del('dist'); // Удаляем папку dist перед сборкой
 });
-
-gulp.task('clear', function () {
-    return cache.clearAll();
-})
 
 gulp.task('browser-sync', function(){
     browserSync.init({
-        server: 'app'
+        server: 'dist'
         });
-    browserSync.watch('app/**/*.*').on('change', browserSync.reload)
+    browserSync.watch('dist/**/*.*').on('change', browserSync.reload)
 });
 
 gulp.task('watch', function() { // включаем brsync,stylus до выполнения watch
@@ -127,10 +116,9 @@ gulp.task('watch', function() { // включаем brsync,stylus до выпо�
 
 });
 
-gulp.task('preload', gulp.parallel('clear', 'clean', 'libcss', 'scripts'))
+gulp.task('preload', gulp.parallel('scripts', 'css-min', 'pug', 'jscript', 'img', 'build'))
 
-gulp.task('default',
-    gulp.series('preload', 'build', gulp.parallel('watch', 'browser-sync')))
+gulp.task('default', gulp.series('clean', 'preload', gulp.parallel('watch', 'browser-sync')))
 
 
 
