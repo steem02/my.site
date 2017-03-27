@@ -5,10 +5,8 @@ body {
 div {
   background-color: #ffd700;
   color: #fff;
-  width: 300px;
-  height: 300px;
   border: 1px solid #f00;
-  font-size: 50px;
+  font-size: 40px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

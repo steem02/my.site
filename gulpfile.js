@@ -15,25 +15,30 @@ var gulp = require('gulp')
     pngquant = require('imagemin-pngquant') // Подключаем библиотеку для работы с png
     cache = require('gulp-cache') // Подключаем библиотеку кеширования
     newer = require('gulp-newer') // смотрит за файлом, и пропускает его дальше, только если он изменен
-    
+    combiner = require('stream-combiner2').obj // обработчик ошибок
+    multipipe = require('multipipe')
 
 gulp.task('stylus', function(){
-  return gulp.src('app/stylus/*.styl', {since: gulp.lastRun('stylus')})
-    .pipe(debug({title: 'src'}))
-    .pipe(sourcemaps.init()) 
-    .pipe(stylus({
+
+  return combiner(
+    gulp.src('app/stylus/*.styl', {since: gulp.lastRun('stylus')}),
+    debug({title: 'stylus_src'}),
+    sourcemaps.init(),
+    stylus({
         'include css': true
-        }))
-    .pipe(debug({title: 'stylus'}))
-    .on('error', notify.onError(function(err) {
+        }),
+    debug({title: 'stylus'}),
+    autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }),
+    sourcemaps.write('.'),
+    gulp.dest('app/css'),
+    debug({title: 'stylus'})
+    ).on('error', notify.onError(
+        function(err) {
             return {
                 title: 'Styles',
                 message: err.message
             };
-    }))
-    .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })).pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('app/css'))
+        }));
 });
 
 gulp.task('css-min', gulp.series('stylus', function() {
@@ -48,14 +53,24 @@ gulp.task('css-min', gulp.series('stylus', function() {
 
 
 gulp.task('pug', function buildHTML(){
-    return gulp.src('app/pug/index.pug', {since: gulp.lastRun('pug')})
-        .pipe(debug({title: 'src'}))
-        .pipe(pug({
+
+    return combiner(
+        gulp.src('app/pug/index.pug', {since: gulp.lastRun('pug')}),
+        debug({title: 'src'}),
+        pug({
             pretty: true,
-        }))
-        .pipe(debug({title: 'dist'}))
-        .pipe(gulp.dest('dist'))
+        }),
+        debug({title: 'dist'}),
+        gulp.dest('dist')
+        ).on('error', notify.onError(
+        function(err) {
+            return {
+                title: 'HTML',
+                message: err.message
+            };
+        }));
 });
+
 
 gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
@@ -69,13 +84,22 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist/js')); // Выгружаем в папку app/js
 });
 
-gulp.task('jscript', function() {
-    return gulp.src('app/js', {since: gulp.lastRun('jscript')})
-        .pipe(newer('dist/js'))
-        .pipe(debug({title: 'js_src'}))
-        .pipe(uglify())    
-        .pipe(gulp.dest('dist/js'))
-})
+gulp.task('jscript', function(){
+
+    return combiner(
+        gulp.src('app/js/*.js', {since: gulp.lastRun('jscript')}),
+        newer('dist/js'),
+        debug({title: 'js_src'}),
+        uglify(),
+        gulp.dest('dist/js')
+        ).on('error', notify.onError(
+        function(err) {
+            return {
+                title: 'JavaScript',
+                message: err.message
+            };
+        }));
+});
 
 gulp.task('img', function() {
     return gulp.src('app/img/**/*') // Берем все изображения из app
