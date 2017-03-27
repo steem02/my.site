@@ -3,14 +3,26 @@ body {
   font-size: 30px;
 }
 div {
-  background-color: #ffd700;
+  background-color: #00f;
   color: #fff;
-  border: 1px solid #f00;
   font-size: 40px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+table {
+  width: 500;
+  height: 400;
+  background: #fff;
+  border: 1px solid #f00;
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+}
+td {
+  border: 1px solid #000;
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

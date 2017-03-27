@@ -25,7 +25,7 @@ gulp.task('stylus', function(){
     debug({title: 'stylus_src'}),
     sourcemaps.init(),
     stylus({
-        'include css': true
+        'include css': true,
         }),
     debug({title: 'stylus'}),
     autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }),
@@ -126,7 +126,8 @@ gulp.task('clean', function() {
 
 gulp.task('browser-sync', function(){
     browserSync.init({
-        server: 'dist'
+        server: 'dist',
+        notify: false
         });
     browserSync.watch('dist/**/*.*').on('change', browserSync.reload)
 });
