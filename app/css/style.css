@@ -14,12 +14,14 @@ div {
 table {
   width: 500;
   height: 400;
-  background: #fff;
+  background: #800080;
   border: 1px solid #f00;
   -webkit-border-radius: 20px;
           border-radius: 20px;
+  color: #f00;
 }
-td {
+table td {
+  color: #f00;
   border: 1px solid #000;
   -webkit-border-radius: 20px;
           border-radius: 20px;
