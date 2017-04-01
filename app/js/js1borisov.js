@@ -362,18 +362,66 @@
 // console.log('12BnM'.replace(/^(\d+)([a-z]+)$/i, '$2-$1'))
 // 'BnM-12'
 
-var s ="Smith, John\nDow, Mike\nLee, Steve";
-// 'John Smith\nMike Dow\nSteve Lee'; результат
-//глобалом g находим все значения(т.к. рег выражения находят и останавливаются на первом)
-console.log(s.replace(/([a-z]+), ([a-z]+)/ig, "$2 $1")); 
+// var s ="Smith, John\nDow, Mike\nLee, Steve";
+// // 'John Smith\nMike Dow\nSteve Lee'; результат
+// //глобалом g находим все значения(т.к. рег выражения находят и останавливаются на первом)
+// console.log(s.replace(/([a-z]+), ([a-z]+)/ig, "$2 $1")); 
 
+//Конструкторы для разных объектов Названия с большой буквы
+// function User(name,age){
+// 	this.name = name;
+// 	this.age = age;
+// 	this.admin = false;
+// }
 
+//частный случай использования NEW для рег выражений
+// var accept = 
+// 	['gmail', 'yandex', 'yahoo'];
+// var re = new RegExp('accept.join(|)', 'i');
 
+// /gmail|yandex|yahoo/.test(email);
 
+// lab 6.1
+// function Book(title, pubYear, price) {
+// 	this.title = title;
+// 	this.pubYear = pubYear;
+// 	this.price = price;
+// }
+// Book.prototype.show = function(w) {
+// 	return console.log('title:',this.title,',','price:', this.price,',',w)
+// }
+// var gar = new Book('Garry Potter', '2017', '25$');
+// var cru = new Book('Andey Crus', '2010', '34$');
+// console.log(gar.show('buy'));
+// console.log(cru.show('none'));
 
+// // внутренний объект Date
+// var d = new Date(2014, 10, 21)
+// console.log(d)
 
+// lab 6.2
+// function getDate(str){
+// 	var f = str.match(/^(\d\d?)-(\d\d?)-(\d{4})$/);
+// 	if(!f)
+// 		throw new Error('Неправильная дата!')
+// 	return new Date(f[3], f[2]-1, f[1]) 
+// };
+// try{
+// 	var d = getDate('21-10-2014');
+// 	console.log(d.toString());
+// }catch(e){
+// 	console.log(e.message);
+// }
 
-
+//контроль ошибок
+// try{
+// 	var x = 1, y = 0;
+// 	if(y==0)
+// 		throw new Error('На 0 делить нельзя!');
+// 	console.log(x/y);
+// }catch(e){
+// 	console.log(e.name, e.message);
+// }
 
 
 
