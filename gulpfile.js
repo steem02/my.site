@@ -90,7 +90,7 @@ gulp.task('jscript', function(){
         gulp.src('app/js/*.js', {since: gulp.lastRun('jscript')}),
         newer('dist/js'),
         debug({title: 'js_src'}),
-        uglify(),
+        // uglify(),
         gulp.dest('dist/js')
         ).on('error', notify.onError(
         function(err) {

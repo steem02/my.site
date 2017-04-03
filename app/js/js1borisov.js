@@ -94,9 +94,9 @@
 
 // 	switch(num%10){
 // 		case 1: x = "a"; break;
-// 		case 2: ;
-// 		case 3:;
-// 		case 4: x = "ы";
+// 		case 2: break;;
+// 		case 3: break;;
+// 		case 4: x = "ы";break;
 // 	}
 // console.log(str + x);
 // }
