@@ -3,10 +3,10 @@ body {
   font-size: 30px;
 }
 div.box {
-  background: #f00;
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
+  background: #000;
+  border: 75px solid transparent;
+  border-bottom: 75px solid #f00;
+  width: 0;
 }
 table {
   width: 500;
