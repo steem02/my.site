@@ -1,5 +1,5 @@
 //псевдопротокол javascript:..... Используется вместо ссылок для того,
-//чтобы при нажатие на любую ссылку выполнялась функция внутри.
+//чтобы при нажатии на любую ссылку выполнялась функция внутри.
 
 //WINDOW свойства
 // History	- отвечает за посещенные страницы в этой вкладке
@@ -47,7 +47,7 @@
 // Открытие нового окна
 // var w;
 // function demo(p){
-// 	w = window.open('https://ya.ru','', p); // w это ссылка на объект открытого окна
+// 	w = window.open('https://ya.ru','', 'width=500, height=200'); // w это ссылка на объект открытого окна
 // 	//параметры menubar=1 и w.blur уже не акутуальны
 // 	// w.blur(); //если окно вызывается отдельно, тогда оно сразу же прячется
 // }
@@ -96,7 +96,11 @@
 // style.cssFloat // второе исключение
 // div.className // третье исключение
 
-// Ф О Р М Ы !!!!
+
+
+// Ф О Р М Ы !!!! Коллекции!!! К О Л Л Е К Ц И И!!!!!!!!!!!!!!!!!!!!!
+
+
 
 // var f;
 // f = document.forms.search
@@ -117,11 +121,41 @@
 // f.elements[1].select(); // выделить все содержимое формы
 // f.elements[5].click(); // выбирается кнопка и кликается по ней автоматически
 
+// Тест из learnJavaScript 
+// var userName = prompt('Login:');
+// if(userName == 'админ'){
+// 	var pass = prompt('Password:');
+// 	pass == 'Черный'? alert('Добро Пожаловать!')
+// 		: pass == '' | pass == null ? alert('Вход отменен')
+// 		: alert('Пароль неверен')
+// }else if(userName == null | userName == ''){
+// 	alert('Вход отменен')
+// }
+// else{
+// 	alert('Я вас не знаю')
+// }
 
+// HTMLSelectElement 
+// type = 'select-one' по умолчанию
+// type = 'select-multiple' если у списка задан атрибут multiple
+// selectedIndex индекс выбранного элемента option,
+// если не выбран возвращается -1, если выставлен multipe
+// вернется индекс первого из выбранных option
 
+// HTMLOptionElement
+// form, text, defaultSelected, index, value, selected,
+// disabled, label
 
+// Конструктор Option
+//Option(text, value, defaultSelected, selected)
 
+//location.assign(url); перейти по ссылке
 
+// HTMLTableElement
+
+//D O M !!!!!!!!!!!!!1
+// nodeValue - получить сам текст 
+// textContent - получить весь текст включая текст внутри строчных элементов
 
 
 
