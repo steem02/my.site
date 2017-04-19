@@ -14,7 +14,7 @@
     }
     function showChildNodes(node, doc){
       if(node.nodeType == 3){
-        doc.write(node.nodeValue+'<br>');
+        doc.write('<li><i>'+node.nodeValue+'</i></li></ul>');
         if(node.nextSibling == null){
           if(node.parentElement.nextSibling != null){
             node = node.parentElement.nextSibling 
@@ -31,7 +31,7 @@
         
       }
       else if(node.nodeType == 1){
-        doc.write(node.nodeName + '<br>');
+        doc.write('<ul><li>'+node.nodeName + '</li>');
         if(node.hasChildNodes() == true){
           node = node.firstChild;
         }else{

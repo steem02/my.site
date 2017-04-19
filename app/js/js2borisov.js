@@ -157,13 +157,39 @@
 // nodeValue - получить сам текст 
 // textContent - получить весь текст включая текст внутри строчных элементов
 
+//Создание узлов
+// Методы Document
+//p.appendChild('') - добавить ребенка в p!!! Добавляет последним всегда!!!
+//insertBefore(p,p2) - взять p и вставить его до p2
+// p.cloneNode() - клонирование p, по умолчанию только сам элемент
+//p.cloneNode(true) - клонирование вместе с детьми
+//var p2 = p.removeChild(p2) - удаляет элемент и отдает его
+// d.replaceChild(p2, p) - заменит p2 на p и вернет p2
+
+//var f = document.createDocumentFragment();
+//f.appendChild(i)
+//f.appendChild(b) - добавляем элементы в фрагмент
 
 
+//События!!!!
+// javascript:alert('Hello') можно вводить в строке браузера и выполнять скрипт
+//bookmarklets - название готовых джава скрипт закладок
 
+//Типы событий
+// onclick(можно отменить)
+// onmousedown - кнопка мыши нажата
+// onmouseup - кнопка мыши отпущена
+//onmousemove - когда мышь двигается вообще
+//onmouseover - когда мышь вошла в зону элемента
+//onmouseout - когда мышь вышла из зоны
 
+//onkeydown (можно отменить) - клавиша на клавиатуре нажата
+//onkeypress (можно отменить) - клавиша на клавиатуре нажата и отпущена
+//onkeyup - клавиша на клавиатуре отпущена
 
-
-
+//<body> ,a, area, button,input, label, select, textarea
+//onfocus
+//onblur 
 
 
 

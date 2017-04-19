@@ -1,0 +1,112 @@
+﻿<!doctype html>
+
+<html>
+<head>
+	<title>Раскрывающейся списка</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		ul.expandable li { list-style-image: url('img/point.gif') }
+		li ul.expandable { display: none } /* выставить в none */
+	</style>
+	<script>
+		/*
+			Опишите функцию setPlusIcon(), которая 
+			- устанавливает для элементов li значок [+], 
+				если этот элемент имеет вложенный список
+			- регистрирует функцию aClick в качестве обработчика события onclick
+				для всех ссылок
+		*/
+		/*
+			Запустите функцию setPlusIcon() при загрузке страницы
+		*/
+		window.onload = function setPlusIcon(){
+			var li = document.body.getElementsByTagName('li');
+			var a = document.body.getElementsByTagName('a');
+			for(var i=0; i < li.length; ++i){
+				var ul = li[i].getElementsByTagName('ul');
+				if(ul[0] != undefined){
+					li[i].style.listStyleImage = "url('img/plus.gif')";
+				}
+			}
+			for(var j=0; j <= a.length; ++j){
+				a[j].addEventListener('click', aClick, false);
+			}
+		};
+		
+		/*
+			Опишите функцию aClick(), которая обрабатывает щелчок по ссылке
+			1. Получите объект - ссылку, по которой был сделан щелчок 
+			2. Найдите родительский li
+			3. Найдите вложенный список
+			4. Если вложенных списков нет - разрешите переход по ссылке
+			5. Назначьте вложенному списку нужные свойства и поменяйте иконку
+			6. Запретите переход по ссылке
+		*/
+		function aClick(e){
+			var clickObj = e.target;
+			var clickParr = clickObj.parentNode;
+			var parrIn = clickParr.getElementsByTagName('ul');
+			if(parrIn[0] != undefined) {
+				
+				if(parrIn[0].style.display == 'block'){
+					clickParr.style.listStyleImage = "url('img/plus.gif')";
+					parrIn[0].style.display = 'none';
+				}else{
+					parrIn[0].style.display = 'block';
+					clickParr.style.listStyleImage = "url('img/minus.gif')";
+				}
+				e.preventDefault();
+			}
+		}	
+		
+	</script>
+</head>
+
+<body>
+	<h1>Пример раскрывающегося списка</h1>
+	<ul class="expandable">
+		<li>
+			<a href="#">Книги</a>
+			<ul class="expandable">
+				<li>
+					<a href="#">Отечественные</a>
+					<ul class="expandable">
+						<li><a href="#">Детективы</a></li>
+						<li><a href="#">Научная фантастика</a></li>
+						<li><a href="#">Исторические</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Зарубежные</a>
+					<ul class="expandable">
+						<li><a href="https://yandex.ru">Детективы</a></li>
+						<li><a href="#">Научная фантастика</a></li>
+						<li><a href="#">Исторические</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+ 		<li>
+			<a href="#">DVD</a>
+			<ul class="expandable">
+				<li>
+					<a href="#">Отечественные</a>
+					<ul class="expandable">
+						<li><a href="#">Детективы</a></li>
+						<li><a href="#">Научная фантастика</a></li>
+						<li><a href="#">Исторические</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Зарубежные</a>
+					<ul class="expandable">
+						<li><a href="#">Детективы</a></li>
+						<li><a href="#">Научная фантастика</a></li>
+						<li><a href="#">Исторические</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
