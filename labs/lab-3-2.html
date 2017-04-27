@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Таблица умножения</title>
 <style type="text/css">
-td{padding:10px;border:1px solid #369;}
+
 </style>
 <script type="text/javascript">
 var cell = 100;
@@ -20,12 +20,12 @@ function createDOM() {
 		var tr = tb.appendChild(document.createElement('tr'));
 		for(var j=1; j<=cell; j++){
 			var td = tr.appendChild(document.createElement('td'));
-			td.appendChild(document.createTextNode(i*j))
+			td.appendChild(document.createTextNode(`${i}*${j}=${i*j}`))
 		}
 
 		}
 	var end = new Date();
-	console.log((end - start)+' ms');
+	console.log(`${end - start} ms`);
 
 	/* Создайте в элементе div таблицу с помощью методов DOM */
 }

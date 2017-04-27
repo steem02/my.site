@@ -1,27 +1,2 @@
-body {
-  background-color: none;
-  font-size: 30px;
-}
-div.box {
-  background: #000;
-  border: 75px solid transparent;
-  border-bottom: 75px solid #f00;
-  width: 0;
-}
-table {
-  width: 500;
-  height: 400;
-  background: #800080;
-  border: 1px solid #f00;
-  -webkit-border-radius: 20px;
-          border-radius: 20px;
-  color: #f00;
-}
-table td {
-  color: #f00;
-  border: 1px solid #000;
-  -webkit-border-radius: 20px;
-          border-radius: 20px;
-}
 
 /*# sourceMappingURL=style.css.map */

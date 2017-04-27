@@ -7,42 +7,9 @@ html
 		meta
 		include include/header.pug
 		link(rel='stylesheet', href='css/style.min.css')
-		script(src='js/js2borisov.js')
-		script.
-			var f;
-			function f(){
-				f = document.forms.search
-			}
-			function r(){
-				//- f.reset();
-				f.elements[1].focus();
-			}
-			function s(){
-				//- f.submit();
-				//- f.elements[1].select();
-				f.elements[4].click();
-			}
 body
-	form(action="http://google.ru/search" target="_blank" name="search")
-		textarea(name='ta')
-		fieldset
-			legend.
-				Я ищу
-			div.block
-				label
-					span.
-						Слово
-					input(type="text" name="q" value="Уарабей")
-		div.block
-			button
-				a(href='javascript:f()').
-					Кликнуть
-			button
-				a(href="javascript:demo()").
-					Сбросить
-			button
-				a(href="javascript:s()").
-					Отправить
-			button(type='submit').
-				Submit
+	#block1
+	#block2
+	#block3
+	script(src='js/js2almazov.js')
 

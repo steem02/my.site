@@ -69,8 +69,9 @@
 		**	Функция убирает меню с указанным ID
 		*/
 		function hideMenu(objID){
-			var obj = document.getElementById(objID);
-			obj.style.visibility = "";
+			
+				var obj = document.getElementById(objID);
+				setTimeout(function(){obj.style.visibility = "";},400)
 		}		
 	</script>
 </head>
@@ -80,7 +81,7 @@
 	<div id="menu">
 		<a href="#" 
 			onmouseover="showMenu('subMenu1')"
-			onmouseout="hideMenu('subMenu1')">Модуль 1</a>
+			>Модуль 1</a>
 		<a href="#" 
 			onmouseover="showMenu('subMenu2')"
 			onmouseout="hideMenu('subMenu2')">Модуль 2</a>
