@@ -1,67 +1,38 @@
-.container {
-  width: 650px;
-  min-height: 480px;
+#container {
+  width: 7300px;
+  min-height: 300px;
   background: #d3d3d3;
+  font-size: 25px;
+  position: relative;
+  left: 0;
+  -webkit-transition: left 3s ease-out;
+  transition: left 3s ease-out;
+}
+#slider {
   margin: 100px auto;
-  text-align: center;
-}
-.container::-moz-selection {
-  background: transparent;
-  color: transparent;
-}
-.container::selection {
-  background: transparent;
-  color: transparent;
+  width: 790px;
+  height: 300px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background: #ff0;
+  overflow: hidden;
 }
 .my-image {
-  width: 200px;
-  height: auto;
+  width: auto;
+  height: 300px;
   vertical-align: top;
-  margin: 5px;
-  border: 1px solid #ffa500;
-  cursor: pointer;
 }
-.my-image:hover {
-  border: 1px solid #fff;
-}
-.my-image::-moz-selection {
+body::-moz-selection,
+.my-image::-moz-selection,
+.container::-moz-selection,
+#slide::-moz-selection {
   background: transparent;
   color: transparent;
 }
-.my-image::selection {
-  background: transparent;
-  color: transparent;
-}
-#blackpanel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0,0,0,0.8);
-  display: none;
-}
-#blackpanel::-moz-selection {
-  background: transparent;
-  color: transparent;
-}
-#blackpanel::selection {
-  background: transparent;
-  color: transparent;
-}
-#selection::-moz-selection {
-  background: transparent;
-  color: transparent;
-}
-#selection::selection {
-  background: transparent;
-  color: transparent;
-}
-body::-moz-selection {
-  background: transparent;
-  color: transparent;
-}
-body::selection {
+body::selection,
+.my-image::selection,
+.container::selection,
+#slide::selection {
   background: transparent;
   color: transparent;
 }
