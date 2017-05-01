@@ -30,10 +30,10 @@ function Triangle(id,base,height,color) {
     	this.idElement.appendChild(blockCreate);
     	var styleCss = blockCreate.style;
     	styleCss.width = 0;
-    	styleCss.margin = '200px auto';
         styleCss.border = `${this.width/2}px solid transparent`;
         styleCss.borderTop = '0 solid transparent';
-        styleCss.display = 'inline-block';
+        styleCss.float = 'left';
+        styleCss.marginLeft = '300px';
         if(color != undefined){
         	styleCss.borderBottom = `${this.h}px solid ${this.background}`;
         }else{
