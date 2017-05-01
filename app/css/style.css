@@ -1,8 +1,69 @@
-#block1 {
+.container {
+  width: 650px;
+  min-height: 480px;
+  background: #d3d3d3;
+  margin: 100px auto;
+  text-align: center;
+}
+.container::-moz-selection {
+  background: transparent;
+  color: transparent;
+}
+.container::selection {
+  background: transparent;
+  color: transparent;
+}
+.my-image {
+  width: 200px;
+  height: auto;
+  vertical-align: top;
+  margin: 5px;
+  border: 1px solid #ffa500;
   cursor: pointer;
 }
-#block2 {
-  cursor: pointer;
+.my-image:hover {
+  border: 1px solid #fff;
+}
+.my-image::-moz-selection {
+  background: transparent;
+  color: transparent;
+}
+.my-image::selection {
+  background: transparent;
+  color: transparent;
+}
+#blackpanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+}
+#blackpanel::-moz-selection {
+  background: transparent;
+  color: transparent;
+}
+#blackpanel::selection {
+  background: transparent;
+  color: transparent;
+}
+#selection::-moz-selection {
+  background: transparent;
+  color: transparent;
+}
+#selection::selection {
+  background: transparent;
+  color: transparent;
+}
+body::-moz-selection {
+  background: transparent;
+  color: transparent;
+}
+body::selection {
+  background: transparent;
+  color: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */

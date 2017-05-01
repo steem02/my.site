@@ -1,4 +1,38 @@
-#block1
+.container
+	width 650px
+	min-height 480px
+	background lightgrey
+	margin 100px auto
+	text-align center
+.container::selection
+	background transparent
+	color transparent
+.my-image
+	width 200px
+	height auto
+	vertical-align top
+	margin 5px
+	border 1px solid orange
 	cursor pointer
-#block2
-	cursor pointer
+.my-image:hover
+	border 1px solid white
+.my-image::selection
+	background transparent
+	color transparent
+#blackpanel
+	position absolute
+	top 0
+	left 0
+	bottom 0
+	right 0
+	background rgba(0,0,0,0.8)
+	display none
+#blackpanel::selection
+	background transparent
+	color transparent
+#selection::selection
+	background transparent
+	color transparent
+body::selection
+	background transparent
+	color transparent
