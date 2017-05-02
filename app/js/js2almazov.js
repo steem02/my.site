@@ -20,52 +20,59 @@
 // abcs.map(x => console.log(x.innerText));
 
 //Конструктор треугольников. Вращается при клике
-function Triangle(id,base,height,color) {
-    this.idElement = document.getElementById(`${id}`);
-    this.width = `${base}`;
-    this.h = `${height}`;
-    this.background = `${color}`;
-    this.show = function () {
-    	var blockCreate = document.createElement('div');
-    	this.idElement.appendChild(blockCreate);
-    	var styleCss = blockCreate.style;
-    	styleCss.width = 0;
-        styleCss.border = `${this.width/2}px solid transparent`;
-        styleCss.borderTop = '0 solid transparent';
-        styleCss.float = 'left';
-        styleCss.marginLeft = '300px';
-        if(color != undefined){
-        	styleCss.borderBottom = `${this.h}px solid ${this.background}`;
-        }else{
-        	styleCss.borderBottom = `${this.h}px solid red`;
-        }  
-    }
-    this.setDirection = function(){
-    	function clic(){
-    		this.style.transformOrigin = '150px 150px';
-    		var styl = this.style.transform;
-    		this.style.transform = 'rotate(0deg)';
-	    	for(var i=0;i<=5;++i){
-	    	    switch (this.style.transform) {
-    		    	case ('rotate(90deg)'):
-    					setTimeout(function(){styl = 'rotate(180deg)'}, 500); break;
-    				case ('rotate(180deg)'):
-    					setTimeout(function(){styl = 'rotate(270deg)'}, 500); break;
-    				case ('rotate(270deg)'):
-    					setTimeout(function(){styl = 'rotate(0deg)'}, 500); break;
-    				case ('rotate(0deg)' || 'rotate(360deg)'):
-    					setTimeout(function(){styl = 'rotate(90deg)'}, 500); break;
-    				
-	    	    }
-			}
-		}
-		this.idElement.children[0].addEventListener('click', clic, false);}
-}
-var mini = new Triangle('block1', 300, 300, 'gold');
-var mini2 = new Triangle('block2', 300, 300, '#FF55FF');
-mini.show();mini2.show();
-mini.setDirection();mini2.setDirection();
+// function Triangle(id,base,height,color) {
+//     this.idElement = document.getElementById(`${id}`);
+//     this.width = `${base}`;
+//     this.h = `${height}`;
+//     this.background = `${color}`;
+//     this.show = function () {
+//     	var blockCreate = document.createElement('div');
+//     	this.idElement.appendChild(blockCreate);
+//     	var styleCss = blockCreate.style;
+//     	styleCss.width = 0;
+//     	styleCss.margin = '200px auto';
+//         styleCss.border = `${this.width/2}px solid transparent`;
+//         styleCss.borderTop = '0 solid transparent';
+//         styleCss.float = 'left';
+//         styleCss.marginLeft = '250px';
+//         if(color != undefined){
+//         	styleCss.borderBottom = `${this.h}px solid ${this.background}`;
+//         }else{
+//         	styleCss.borderBottom = `${this.h}px solid red`;
+//         }  
+//     }
+//     this.setDirection = function(){
+//     	function clic(){
+//     		this.style.transformOrigin = '150px 150px';
+// 	    	var v = this;
+// 	    	for(i=0;i<10;++i){
+//     	    switch (i) {
+// 		    	case 1:
+// 					setInterval(function(){v.style.transform = 'rotate(180deg)'},1100);
+// 					break;
+				
+// 				case 2:
+// 					setInterval(function(){v.style.transform = 'rotate(270deg)'},1200);
+// 					break;
+				
+// 				case 3:
+// 					setInterval(function(){v.style.transform = 'rotate(0deg)';},1300);
+// 					break;
+				
+// 				case 0:
+// 					setInterval(function(){v.style.transform = 'rotate(90deg)'},1000);
+// 					break;
+// 				}
+//     	    }
 
+			
+// 		}
+// 		this.idElement.children[0].addEventListener('click', clic);}
+// }
+// var mini = new Triangle('block1', 300, 300, 'gold');
+// var mini2 = new Triangle('block2', 300, 300, '#FF55FF');
+// mini.show();mini2.show();
+// mini.setDirection();mini2.setDirection();
 //Полезное документация, литература
 //w3scools
 //csstricks
@@ -149,8 +156,118 @@ mini.setDirection();mini2.setDirection();
 //     button.show();
 // }
 
+// Слайдер и галереи Lightbox
+// window.addEventListener('DOMContentLoaded', init);
 
+// var blackpanel,
+// 	images,
+// 	container;
 
+// function closeLightbox() {
+// 	blackpanel.innerHTML = '';
+// 	blackpanel.style.display = 'none';
+// 	blackpanel.removeEventListener('click', closeLightbox);
+// }
+
+// function init() {
+// 	console.log('durak');
+// 	blackpanel = document.getElementById('blackpanel');
+// 	images = document.getElementsByClassName('my-image');
+
+// 	container = document.getElementsByClassName('container')[0];
+
+// 	for(var i = 0; i <images.length; i++){
+// 		images[i].addEventListener('click', function(){
+// 			blackpanel.style.display = 'flex';
+// 			console.log(this.src);
+
+// 			var bigImage = document.createElement('img');
+// 			bigImage.src = this.src;
+// 			bigImage.style.width = '75vw';
+// 			bigImage.style.height = '30vw';
+// 			bigImage.style.margin = 'auto';
+// 			bigImage.style.borderRadius = '4px';
+// 			bigImage.id = 'selection';
+// 			blackpanel.appendChild(bigImage);
+// 			bigImage.draggable = 'false';
+
+// 			bigImage.addEventListener('click',function(e){
+// 				console.log('next');
+// 				e.stopPropagation();
+// 			},false);
+// 			blackpanel.addEventListener('click', closeLightbox, false);
+// 		});
+// 	}
+// 	var count = 0;
+// 	container.addEventListener('click', function(){
+// 		count++;
+// 		if (count == 3){
+// 			this.style.background = '#' + Math.floor(Math.random()*16000000).toString(16);
+// 			count = 0;
+// 		}
+// 	});
+// }
+
+// Работа с Формами Блоги Форумы Добавление текста в HTML из браузера
+// window.addEventListener('DOMContentLoaded', init);
+
+// function init() {
+// 	var kesha = document.getElementById('kesha');
+// 	var messagesBox = document.getElementById('messagesbox');
+// 	// keyup - отпустили клавишу
+// 	// keydown - нажали клавишу
+// 	// keypress - нажали и держим
+// 	kesha.addEventListener('keyup', function(e) {
+// 		// console.log('Бам!');
+// 		// console.log(this);
+// 		// console.log(e);
+// 		if (e.keyCode == 13) {
+// 			var newTextLine = document.createElement('p');
+// 			newTextLine.appendChild(document.createTextNode((this.value)));
+// 			messagesBox.appendChild(newTextLine);
+// 			this.value = '';
+// 		}
+// 	});
+// }
+
+// СЛАЙДЕР !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+window.addEventListener('DOMContentLoaded', init);
+
+var images,
+	container;
+
+function init() {
+
+	container = document.getElementById('container');
+	container.style.left = '0';
+	images = document.getElementsByClassName('my-image');
+	setTimeout(function next(){
+		var curPos = container.style.left;
+		var imageSize = images[0].clientWidth;
+		var slide = document.getElementById('slider');
+		var randomColor = '#'+Math.floor(Math.random()*16000000).toString(16);
+		slide.style.boxShadow = '0 0 53px 7px'+randomColor;
+		container.style.left = (parseInt(curPos) - imageSize) + 'px';
+		setTimeout(function(){
+			slide.style.boxShadow = '0 0 3px 1px'+randomColor;
+		},2500);
+		
+			if(curPos === -(images.length-1)*imageSize + 'px'){
+				container.style.transition = 'left 8s ease';
+				slide.style.transition = 'box-shadow 8s ease';
+				slide.style.boxShadow = '0 0 53px 7px'+randomColor;
+				container.style.left = '0';
+				setTimeout(function() {
+					container.style.transition = 'left 5s ease';
+					slide.style.transition = 'box-shadow 5s ease';
+				},8000);
+				setTimeout(next,8100);
+			}else{		
+				setTimeout(next, 6000);
+			}
+	},6000)
+}
 
 
 
