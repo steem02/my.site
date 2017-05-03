@@ -232,42 +232,47 @@
 
 // СЛАЙДЕР !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-window.addEventListener('DOMContentLoaded', init);
+// window.addEventListener('DOMContentLoaded', init);
 
 var images,
-	container;
+	container,
+	kesha,
+	
 
-function init() {
+
+// function init() {
 
 	container = document.getElementById('container');
 	container.style.left = '0';
 	images = document.getElementsByClassName('my-image');
-	setTimeout(function next(){
+	var slide = document.getElementById('slider');
+	function next(){
 		var curPos = container.style.left;
 		var imageSize = images[0].clientWidth;
-		var slide = document.getElementById('slider');
 		var randomColor = '#'+Math.floor(Math.random()*16000000).toString(16);
 		slide.style.boxShadow = '0 0 53px 7px'+randomColor;
 		container.style.left = (parseInt(curPos) - imageSize) + 'px';
 		setTimeout(function(){
-			slide.style.boxShadow = '0 0 3px 1px'+randomColor;
-		},2500);
-		
-			if(curPos === -(images.length-1)*imageSize + 'px'){
-				container.style.transition = 'left 8s ease';
-				slide.style.transition = 'box-shadow 8s ease';
-				slide.style.boxShadow = '0 0 53px 7px'+randomColor;
-				container.style.left = '0';
-				setTimeout(function() {
-					container.style.transition = 'left 5s ease';
-					slide.style.transition = 'box-shadow 5s ease';
-				},8000);
-				setTimeout(next,8100);
-			}else{		
-				setTimeout(next, 6000);
-			}
-	},6000)
-}
+				slide.style.boxShadow = '0 0 3px 1px'+randomColor;
+			},2500);
+			
+				if(curPos === -(images.length-1)*imageSize + 'px'){
+					container.style.transition = 'left 10s';
+					slide.style.transition = 'box-shadow 10s';
+					slide.style.boxShadow = '0 0 73px 45px'+randomColor;
+					container.style.left = '0';
+					setTimeout(function() {
+						container.style.transition = 'left 5s ease';
+						slide.style.transition = 'box-shadow 5s ease';
+					},10000);
+					setTimeout(next,8100);
+				}else{		
+					setTimeout(next, 6000);
+				}};
+	var pop = setTimeout(next,1500);
+	kesha = function (){clearTimeout(pop),console.log(next)}
+slide.addEventListener('click',kesha);
+// }
 
 
 
