@@ -1,72 +1,7 @@
-html
-	height 100%
-
-#container
-	width 7300px
-	min-height 300px
-	background lightgrey
-	font-size 25px
-	position relative
-	left 0
-	transition left 5s ease
-
-#slider
+#square
+	width 200px
+	height 200px
 	margin 0 auto
-	width 780px
-	height 290px
-	border-radius 50%
-	background yellow
-	overflow hidden
-	position relative
-	top 200px
-	transition box-shadow 2.5s ease
-	box-shadow 0px 0px 0px gray
-	
-#slider:focus
-	outline 0
-	background transparent
-	color transparent
-	
-.buttons
-	display none
-	font-size 3em
-	font-weight bold
-	color gray
-	line-height 50px
-	text-align center
-	width 50px
-	height 50px
-	position absolute
-	z-index 1
-	background white
-	border-radius 50%
-	opacity 0
-	transition opacity 1s, display 5s, background 1.5s, color 2s, box-shadow 2s
-	cursor pointer
-.buttons:hover
-	opacity 0.7
-	background black
-	color white
-	box-shadow 0px 0px 3px 6px white
-
-.buttons::selection
-  background transparent
-  color transparent
-	
-#buttonLeft
-	top 120px
-	left 20px
-#buttonRight
-	top 120px
-	right 20px	
-.my-image
-	width 780px
-	height auto
-	vertical-align top
-
-
-// выделение слайдов
-body::selection, .my-image::selection,
-.container::selection, #slide::selection
-	background transparent
-	color transparent
+	background lime
+	transform translate(1px,300px)
+	transition all .3s ease-out
