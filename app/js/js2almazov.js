@@ -232,48 +232,89 @@
 
 // СЛАЙДЕР !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+
 // window.addEventListener('DOMContentLoaded', init);
-
-var images,
-	container,
-	kesha,
-	
-
+// var images,container,slide,curPos,randomColor,stop2,knope;
 
 // function init() {
+// 	var buttonLeft = document.getElementById('buttonLeft');
+// 	var buttonRight = document.getElementById('buttonRight');
+// 	knope = document.getElementsByClassName('buttons');
+// 	container = document.getElementById('container');
+// 	imag = document.getElementsByClassName('my-image');
+// 	slide = document.getElementById('slider');
+// 	imageSize = parseInt(getComputedStyle(imag[0]).width);
+	
 
-	container = document.getElementById('container');
-	container.style.left = '0';
-	images = document.getElementsByClassName('my-image');
-	var slide = document.getElementById('slider');
-	function next(){
-		var curPos = container.style.left;
-		var imageSize = images[0].clientWidth;
-		var randomColor = '#'+Math.floor(Math.random()*16000000).toString(16);
-		slide.style.boxShadow = '0 0 53px 7px'+randomColor;
-		container.style.left = (parseInt(curPos) - imageSize) + 'px';
-		setTimeout(function(){
-				slide.style.boxShadow = '0 0 3px 1px'+randomColor;
-			},2500);
+// 	var left = function(){
+// 		container.style.transition = 'left 0.5s';
+// 		container.style.webkitTransition = 'left 0.5s'
+// 		if(parseInt(container.style.left) < 0){
+// 		container.style.left = (parseInt(container.style.left)+imageSize) + 'px';
+// 		}
+// 	};
+// 	var right = function(){
+// 		container.style.transition = 'left 0.5s';
+// 		container.style.webkitTransition = 'left 0.5s'
+// 		if(parseInt(container.style.left) > (-(imag.length-1)*imageSize)){
+// 		container.style.left = (parseInt(container.style.left)-imageSize) + 'px';
+// 		}
+// 	};
+// 	var out = function(){
+// 		for(var i = 0; i < knope.length; ++i){
+// 		knope[i].style.display = 'none';
+// 		}
+// 		slide.blur();
+// 	}
+// 	var key = function(e){
+// 		if(e.keyCode == 37){
+// 			left();
+// 		}else if(e.keyCode == 39){
+// 			right();
+// 		}
+// 		e.stopPropagation();
+// 	}
+
+// 	slide.addEventListener('keyup', key);
+// 	buttonLeft.addEventListener('click', left);
+// 	buttonRight.addEventListener('click', right);
+// 	slide.addEventListener('mouseout', out);
+// 	container.style.left = 0;
+// 	function step1(){
+// 		randomColor = '#'+Math.floor(Math.random()*16000000).toString(16);
+// 		curPos = container.style.left;
+// 		slide.style.boxShadow = '0 0 53px 7px'+randomColor;
+// 		container.style.left = (parseInt(curPos) - imageSize) + 'px';
+// 		setTimeout(function (){
+// 				slide.style.boxShadow = '0 0 0px 0px'+randomColor;
+// 			},2500);
 			
-				if(curPos === -(images.length-1)*imageSize + 'px'){
-					container.style.transition = 'left 10s';
-					slide.style.transition = 'box-shadow 10s';
-					slide.style.boxShadow = '0 0 73px 45px'+randomColor;
-					container.style.left = '0';
-					setTimeout(function() {
-						container.style.transition = 'left 5s ease';
-						slide.style.transition = 'box-shadow 5s ease';
-					},10000);
-					setTimeout(next,8100);
-				}else{		
-					setTimeout(next, 6000);
-				}};
-	var pop = setTimeout(next,1500);
-	kesha = function (){clearTimeout(pop),console.log(next)}
-slide.addEventListener('click',kesha);
-// }
-
+// 		if(curPos === -(imag.length-1)*imageSize + 'px'){
+// 			container.style.transition = 'left 10s';
+// 			slide.style.transition = 'box-shadow 10s';
+// 			slide.style.boxShadow = '0 0 73px 45px'+randomColor;
+// 			container.style.left = '0';
+// 			setTimeout(function() {
+// 				container.style.transition = 'left 5s ease';
+// 				slide.style.transition = 'box-shadow 5s ease';
+// 			},10000);
+// 			setTimeout(step1,10100);
+// 		}else{	
+// 			var stop2 = setTimeout(step1,5000);
+// 			};
+// 		var even = function(event){
+// 				for(var i = 0; i < knope.length; i++){
+// 					knope[i].style.display = 'block';
+// 					knope[i].style.opacity = '0.4';
+// 				}
+// 				clearTimeout(stop2);
+// 				slide.focus();
+// 				event.stopPropagation();
+// 			}
+// 		slide.addEventListener('mouseover', even);
+// 	}
+// 	setTimeout(step1,1500);
+// };
 
 
 
