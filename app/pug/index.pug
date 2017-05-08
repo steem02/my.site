@@ -5,6 +5,19 @@ head
 	title Document
 	link(rel="stylesheet", href="css/style.min.css")
 	script(src="js/js2almazov.js")
-body
-	#square
-	
+body(draggable='false')
+	#slider(draggable='false' tabindex='0' onmousedown="return false" onselectstart="return false")
+		#buttonLeft.buttons.
+			&lt;
+		#buttonRight.buttons.
+			&gt;
+		#container(draggable='false' onmousedown="return false" onselectstart="return false")
+			img.my-image(src="img/img_1.jpg",draggable='false', alt="")
+			img.my-image(src="img/img_2.jpg",draggable='false', alt="")
+			img.my-image(src="img/img_3.jpg",draggable='false', alt="")
+			img.my-image(src="img/img_4.jpg",draggable='false', alt="")
+			img.my-image(src="img/img_5.jpg",draggable='false', alt="")
+			img.my-image(src="img/img_6.jpg",draggable='false', alt="")
+			img.my-image(src="img/img_7.jpg",draggable='false', alt="")
+			img.my-image(src="img/img_8.jpg",draggable='false', alt="")
+			img.my-image(src="img/img_9.jpg",draggable='false', alt="")
