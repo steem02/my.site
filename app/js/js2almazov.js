@@ -247,25 +247,10 @@ function init() {
 	
 
 	var left = function(){
-		container.style.transition = 'left 0.5s';
-		container.style.webkitTransition = 'left 0.5s'
-		if(parseInt(container.style.left) < 0){
-		container.style.left = (parseInt(container.style.left)+imageSize) + 'px';
-		}
+		container.insertBefore(imag[(imag.length-1)],imag[0]);
 	};
 	var right = function(){
-		container.style.transition = 'left 0.5s';
-		container.style.webkitTransition = 'left 0.5s'
-		// if(parseInt(container.style.left) > (-(imag.length-1)*imageSize)){
-		// container.style.left = (parseInt(container.style.left)-imageSize) + 'px';
-		// };
-		var imageSelectRight = (parseInt(container.style.left)/imageSize);
-		if(imageSelectRight != 0){
-			container.style.left = (-(parseInt(container.style.left)+imageSize))+'px';
-			container.appendChild(imag[0])
-		}else{
-			container.style.left = (-(parseInt(container.style.left))-imageSize)+'px';
-		}
+		container.appendChild(imag[0]);
 	};
 	var out = function(){
 		for(var i = 0; i < knope.length; ++i){

@@ -1,0 +1,430 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"getElementb",
+				"getElementByClassName"
+			],
+			[
+				"P",
+				"stopPropagation"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"wh",
+				"whatIsYourName"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"last",
+				"lastRun"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"brows",
+				"browserSync"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "vie",
+		"selected_items":
+		[
+			[
+				"vie",
+				"View: Toggle Side Bar"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"sublim",
+				"SublimeLinter: Don’t Show Errors on Save"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"git",
+				"Git: Commit history"
+			],
+			[
+				"gitcom",
+				"Git: Commit"
+			],
+			[
+				"term",
+				"Terminal: Open in project folder"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Install Package Control"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 107.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/svsteempk/www/mi.site/public_html/app/css/style.css",
+		"/home/svsteempk/www/mi.site/public_html/labs/slider/slider.js",
+		"/home/svsteempk/www/mi.site/public_html/labs/slider/index.pug",
+		"/home/svsteempk/www/mi.site/public_html/labs/slider/style.styl",
+		"/home/svsteempk/www/mi.site/public_html/dist/index.html",
+		"/home/svsteempk/www/mi.site/public_html/dist/css/style.min.css",
+		"/home/svsteempk/www/mi.site/public_html/app/pug/index.pug",
+		"/home/svsteempk/www/mi.site/public_html/node_modules/weinre/web/client/Popover.js",
+		"/home/svsteempk/www/mi.site/public_html/app/pug/index2.pug",
+		"/home/svsteempk/www/mi.site/public_html/.gitignore",
+		"/home/svsteempk/www/mi.site/public_html/labs/forum/index.html",
+		"/home/svsteempk/www/mi.site/public_html/labs/forum/forum.js",
+		"/home/svsteempk/www/mi.site/public_html/labs/lightbox/index.html",
+		"/home/svsteempk/www/mi.site/public_html/labs/lightbox/styl.css",
+		"/home/svsteempk/www/mi.site/public_html/labs/lightbox/light.js",
+		"/home/svsteempk/www/mi.site/public_html/app/js/js2borisov.js",
+		"/home/svsteempk/www/mi.site/public_html/app/js/js1almazov.js",
+		"/home/svsteempk/www/mi.site/public_html/labs/lab-3-2.html",
+		"/home/svsteempk/www/mi.site/public_html/labs/lab-4-2.html",
+		"/home/svsteempk/www/mi.site/public_html/labs/lab_4.1.html",
+		"/var/run/vmblock-fuse/blockdir/4fcd81c2/lab-4-2.html",
+		"/var/run/vmblock-fuse/blockdir/0d8e47a2/event.html",
+		"/var/run/vmblock-fuse/blockdir/c161513e/lab-4-1.html",
+		"/var/run/vmblock-fuse/blockdir/9415a53c/demo-4-1.html",
+		"/var/run/vmblock-fuse/blockdir/9697a232/demo-4-2.html",
+		"/var/run/vmblock-fuse/blockdir/9c16fd24/event.html",
+		"/home/svsteempk/www/mi.site/public_html/labs/lab-3-1.html",
+		"/var/run/vmblock-fuse/blockdir/870cd8bf/lab-3-2.html",
+		"/var/run/vmblock-fuse/blockdir/4d5a88ba/lab-3-1.html",
+		"/var/run/vmblock-fuse/blockdir/01b45ea6/lab-3-1.html",
+		"/var/run/vmblock-fuse/blockdir/4d5a88ba/dom.html",
+		"/var/run/vmblock-fuse/blockdir/933de1fb/table.html",
+		"/var/run/vmblock-fuse/blockdir/0a27581f/lab-2-2.html",
+		"/var/run/vmblock-fuse/blockdir/933de1fb/form.css",
+		"/var/run/vmblock-fuse/blockdir/0a27581f/select-options.html",
+		"/home/svsteempk/www/mi.site/public_html/labs/lab_js2.2.html",
+		"/var/run/vmblock-fuse/blockdir/0a27581f/lab-2-1.html",
+		"/var/run/vmblock-fuse/blockdir/5e58e585/lab-2-1.html",
+		"/var/run/vmblock-fuse/blockdir/032c4116/form.html",
+		"/home/svsteempk/www/mi.site/public_html/dist/inner.html",
+		"/var/run/vmblock-fuse/blockdir/cd571c5e/index.html",
+		"/var/run/vmblock-fuse/blockdir/cd571c5e/new.html",
+		"/var/run/vmblock-fuse/blockdir/cd571c5e/inner.html",
+		"/home/svsteempk/www/mi.site/public_html/dist/window.html",
+		"/home/svsteempk/www/mi.site/public_html/app/stylus/style.styl",
+		"/home/svsteempk/www/mi.site/public_html/app/js/js1borisov.js",
+		"/home/svsteempk/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/svsteempk/www/mi.site/public_html/dist/js/js1almazov.js",
+		"/home/svsteempk/www/mi.site/public_html/dist/js/first.js",
+		"/home/svsteempk/www/mi.site/public_html/gulpfile.js",
+		"/home/svsteempk/www/mi.site/public_html/app/js/example.js",
+		"/home/svsteempk/www/mi.site/public_html/app/js/first.js",
+		"/home/svsteempk/www/mi.site/public_html/app/pug/include/header.pug",
+		"/mnt/hgfs/shared/www/UBUNTU.txt",
+		"/home/svsteempk/www/mi.site/public_html/dist/style.min.css",
+		"/home/svsteempk/www/mi.site/public_html/1234",
+		"/home/svsteempk/www/mi.site/public_html/app/css/min_css/style.min.css",
+		"/home/svsteempk/www/mi.site/public_html/app/css/min_css/libs.min.css",
+		"/home/svsteempk/www/mi.site/public_html/app/css/style.css.map",
+		"/home/svsteempk/www/mi.site/public_html/app/css/min_css/main.min.css",
+		"/home/svsteempk/www/mi.site/public_html/package.json",
+		"/home/svsteempk/www/mi.site/public_html/README.md",
+		"/home/svsteempk/www/mi.site/public_html/app/css/style.min.css",
+		"/home/svsteempk/www/mi.site/public_html/app/index.html",
+		"/home/svsteempk/www/mi.site/public_html/app/stylus/libs.styl",
+		"/home/svsteempk/www/mi.site/public_html/app/css/libs.min.css",
+		"/home/svsteempk/www/mi.site/public_html/app/css/libs.css",
+		"/home/svsteempk/www/mi.site/public_html/app/css/home.min.css",
+		"/home/svsteempk/www/mi.site/public_html/dist/libs.css",
+		"/home/svsteempk/www/mi.site/public_html/.bowerrc",
+		"/home/svsteempk/www/mi.site/public_html/dist/style.css",
+		"/home/svsteempk/www/mi.site/public_html/app/stylus/home.styl",
+		"/home/svsteempk/www/mi.site/public_html/style.styl",
+		"/home/svsteempk/www/mi.site/public_html/app/css/main.css",
+		"/home/svsteempk/www/mi.site/public_html/app/stylus/main.styl",
+		"/home/svsteempk/www/mi.site/public_html/index.pug",
+		"/home/svsteempk/www/mi.site/public_html/style.stylus",
+		"/mnt/hgfs/shared/www/my.site/public_html/index.html",
+		"/mnt/hgfs/shared/www/my.site/public_html/index.pug",
+		"/mnt/hgfs/shared/www/my.site/public_html/style.stylus"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"10",
+			"2",
+			"left 1s",
+			"display 1s",
+			"pop",
+			"console.log",
+			".jpg\"",
+			"img",
+			".jpg\"",
+			"2",
+			"this",
+			"class",
+			"class='my-ima",
+			"selection",
+			":sele",
+			"image:selection",
+			":sel",
+			"selection",
+			"image:selection",
+			":select",
+			"image:selection",
+			":se",
+			"selected",
+			"math",
+			"f",
+			"this",
+			"callback",
+			"callack",
+			"setTimeout",
+			"Timeout",
+			"set",
+			"settimeout",
+			"div = 'rot",
+			"div = 'rotate(1",
+			"div = 'rotate(",
+			"styl =",
+			"styl;",
+			"styl = 'ro",
+			"styl",
+			"counter==",
+			"transform",
+			"click\n",
+			"hhhhh",
+			"gena",
+			"this",
+			"set",
+			"../app",
+			"nextElement",
+			"Element",
+			"под",
+			"подк",
+			"javascr",
+			"синх",
+			"settim",
+			"docu",
+			"docu\n",
+			"filter",
+			"массив",
+			"filter",
+			"range",
+			"protot",
+			"w",
+			"f4",
+			"f3",
+			"switch",
+			"swith",
+			"$\"));",
+			"name",
+			"if(num<0)\n\t// \treturn -num;\n\t// return num;",
+			"hi bro",
+			"})\n",
+			"caсhed",
+			"copyimg",
+			","
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"lab",
+				"labs/lab_js2.2.html"
+			],
+			[
+				"index",
+				"dist/index.html"
+			],
+			[
+				"almaz",
+				"app/js/js1almazov.js"
+			],
+			[
+				"boris",
+				"app/js/js1borisov.js"
+			],
+			[
+				"style",
+				"app/stylus/style.styl"
+			],
+			[
+				"jsalmaz",
+				"app/js/js1almazov.js"
+			],
+			[
+				"sty",
+				"app/css/style.css"
+			],
+			[
+				"inde",
+				"dist/index.html"
+			],
+			[
+				"js1",
+				"app/js/js1borisov.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 172.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}
