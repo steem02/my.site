@@ -8,7 +8,7 @@ function clockStart(){
     
     //часы
     
-    if(h > 10){
+    if(h >= 10){
         hour.textContent = h.toString();
     }else{
         hour.textContent = '0' + h.toString();

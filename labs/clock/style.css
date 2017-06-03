@@ -14,7 +14,7 @@
   -webkit-border-radius: 50%;
           border-radius: 50%;
   font-size: 8em;
-  text-shadow: 5px 3px 1px #808080;
+  text-shadow: 1px 1px 1px #454545, 2px 2px 1px #454545,3px 3px 1px #454545,4px 4px 1px #454545;
   text-align: center;
   line-height: 140px;
 }
